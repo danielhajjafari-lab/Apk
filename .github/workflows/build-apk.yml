@@ -38,7 +38,6 @@ jobs:
           mv Database.kt app/src/main/java/com/example/dakhlokharj/Database.kt
           mv SmsReceiver.kt app/src/main/java/com/example/dakhlokharj/SmsReceiver.kt
           mv styles.xml app/src/main/res/values/styles.xml
-        run: 
 
       - name: Build debug APK
         run: gradle --no-daemon :app:assembleDebug
