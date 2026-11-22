@@ -1,6 +1,7 @@
 package com.example.dakhlokharj
 
 import android.Manifest
+import androidx.compose.material3.ExperimentalMaterial3Api
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
@@ -50,7 +51,7 @@ class MainActivity:ComponentActivity(){
   setContent { LedgerUI(this,categories) }
  }
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable fun LedgerUI(ctx:Context,cats:List<String>){
  val db=AppDb.get(ctx); val dao=db.dao(); val scope= rememberCoroutineScope(); val prefs=ctx.getSharedPreferences("bank_patterns",Context.MODE_PRIVATE)
  val txns by dao.all().collectAsState(initial=emptyList())
